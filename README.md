@@ -1,6 +1,6 @@
 # SATU RUMAH
 
-Aplikasi Flutter untuk alur pengajuan perumahan, pemeriksaan Admin DPKP, dan monitoring lapangan Perwaskim Kota Tasikmalaya.
+Aplikasi Flutter untuk alur pengajuan perumahan, pemeriksaan Admin Disperwaskim, dan monitoring lapangan Perwaskim Kota Tasikmalaya.
 
 > **Status:** Prototype lokal. UI consistency pass sudah masuk commit lokal, tetapi belum dipush ke `main`. Backend API dan persistence produksi belum terhubung ke aplikasi Flutter.
 
