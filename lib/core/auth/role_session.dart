@@ -15,7 +15,7 @@ extension AppRoleX on AppRole {
       case AppRole.developer:
         return 'Pengembang';
       case AppRole.admin:
-        return 'Admin DPKP';
+        return 'Admin Disperwaskim';
       case AppRole.perwaskim:
         return 'Tim Perwaskim';
     }
@@ -76,7 +76,9 @@ class RoleSessionNotifier extends StateNotifier<RoleSessionState> {
   static AppRole roleForUsername(String username) {
     final normalized = username.trim().toLowerCase();
     if (normalized.isEmpty) return AppRole.guest;
-    if (normalized == 'admin_dpkp' || normalized.startsWith('admin')) {
+    if (normalized == 'admin_disperwaskim' ||
+        normalized == 'admin_dpkp' ||
+        normalized.startsWith('admin')) {
       return AppRole.admin;
     }
     if (normalized == 'monitoring_perwaskim' ||

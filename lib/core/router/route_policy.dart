@@ -16,7 +16,7 @@ String? roleRouteRedirect({required AppRole role, required String path}) {
   }
   if (requiredRole != null && role == requiredRole) return null;
 
-  final requiredLabel = requiredRole?.label ?? 'Admin DPKP atau Tim Perwaskim';
+  final requiredLabel = requiredRole?.label ?? 'Admin Disperwaskim atau Tim Perwaskim';
   final notice = Uri.encodeComponent(
     'Halaman ini hanya tersedia untuk $requiredLabel. Anda dialihkan ke area ${role.label}.',
   );

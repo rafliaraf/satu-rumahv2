@@ -28,6 +28,60 @@ class MonitoringRepository {
       ditemuiNama: 'H. Endang',
       ditemuiJabatan: 'Perwakilan PT ABC Property',
     ),
+    MonitoringModel(
+      id: '1',
+      nomorSuratBA: 'BA/PERWASKIM/2025/05/0148',
+      tanggalMonitoring: DateTime(2025, 5, 22),
+      namaPerumahan: 'Griya Mangkubumi Asri',
+      namaDeveloper: 'PT Citra Tasik Mandiri',
+      lokasiPerumahan: 'Kec. Mangkubumi, Kota Tasikmalaya',
+      statusHasilEvaluasi: StatusHasilEvaluasi.perluEvaluasiLanjutan,
+      temuanLapangan: [
+        'Saluran drainase sisi timur belum sesuai detail rencana.',
+        'Akses kendaraan pemadam perlu penegasan pada area tikungan blok C.',
+      ],
+      kesimpulan: [
+        'Kawasan dapat dilanjutkan setelah perbaikan desain drainase dan penyampaian revisi gambar teknis.',
+      ],
+      kesepakatan: [
+        'Pengembang akan mengunggah revisi dalam 7 hari kerja.',
+      ],
+      rencanaTindakLanjut: [
+        'RENCANA TINDAK LANJUT WAJIB: Perbarui gambar drainase dan lengkapi simulasi manuver kendaraan pemadam sebelum persetujuan dilanjutkan.',
+      ],
+      pelaksanaNama: 'Rahmat Hidayat, S.T.',
+      pelaksanaJabatan: 'Petugas Pengawas Perwaskim',
+      ditemuiNama: 'H. Asep Hendrayana, S.T.',
+      ditemuiJabatan: 'Penanggung Jawab Pengembang',
+      isDraft: true,
+    ),
+    MonitoringModel(
+      id: '2',
+      nomorSuratBA: 'BA/PERWASKIM/2025/05/0145',
+      tanggalMonitoring: DateTime(2025, 5, 11),
+      namaPerumahan: 'Bungursari Harmoni Indah',
+      namaDeveloper: 'PT Galunggung Asri Propertindo',
+      lokasiPerumahan: 'Kec. Bungursari, Kota Tasikmalaya',
+      statusHasilEvaluasi: StatusHasilEvaluasi.sesuaiSiteplan,
+      temuanLapangan: [
+        'Jaringan jalan paving block telah terpasang 100%.',
+        'PJU dan saluran drainase tertutup berfungsi baik.',
+      ],
+      kesimpulan: [
+        'Seluruh prasarana sarana dan utilitas sesuai spesifikasi teknis.',
+      ],
+      kesepakatan: [
+        'Proses penyerahan PSU siap dilanjutkan ke penandatanganan Berita Acara Final.',
+      ],
+      rencanaTindakLanjut: [
+        'Penerbitan SK Persetujuan Penyerahan PSU oleh Kepala Dinas.',
+      ],
+      pelaksanaNama: 'Rahmat Hidayat, S.T.',
+      pelaksanaJabatan: 'Petugas Pengawas Perwaskim',
+      ditemuiNama: 'Yudi Permana, S.T.',
+      ditemuiJabatan: 'Direktur Pengembang',
+      isDraft: false,
+    ),
   ];
 
   List<MonitoringModel> getAllMonitoring() {

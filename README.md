@@ -11,7 +11,7 @@ flutter pub get
 flutter run -d chrome
 ```
 
-Prototype mencakup tiga role: **Pengembang**, **Admin DPKP**, dan **Tim Perwaskim**. Data utama masih tersimpan di memori dan akan hilang saat proses aplikasi dimulai ulang.
+Prototype mencakup tiga role: **Pengembang**, **Admin Disperwaskim**, dan **Tim Perwaskim**. Data utama masih tersimpan di memori dan akan hilang saat proses aplikasi dimulai ulang.
 
 ## Dokumentasi
 

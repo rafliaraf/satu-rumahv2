@@ -29,7 +29,7 @@ class TabBerandaMonitoring extends ConsumerWidget {
     notifier.updateNamaDeveloper(p.namaPt);
     notifier.updateLokasi('Kota Tasikmalaya');
     notifier.updatePelaksanaNama('Drs. Rian Hidayat, M.Si');
-    notifier.updatePelaksanaJabatan('Ketua Tim Monitoring & Evaluasi DPKP');
+    notifier.updatePelaksanaJabatan('Ketua Tim Monitoring & Evaluasi Disperwaskim');
     context.push('/monitoring/tambah');
   }
 
@@ -88,7 +88,7 @@ class TabBerandaMonitoring extends ConsumerWidget {
                           ),
                           const SizedBox(height: 2),
                           Text(
-                            'Ketua Tim Monitoring & Evaluasi DPKP',
+                            'Ketua Tim Monitoring & Evaluasi Disperwaskim',
                             style: AppTextStyles.bodySmall.copyWith(
                               color: AppColors.textMuted,
                             ),

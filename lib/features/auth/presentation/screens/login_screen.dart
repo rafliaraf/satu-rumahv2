@@ -64,7 +64,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text(
-          'Masuk sebagai Admin Internal DPKP (Rizki Pratama, S.T.)',
+          'Masuk sebagai Admin Internal Disperwaskim (Rizki Pratama, S.T.)',
         ),
         duration: Duration(seconds: 2),
       ),
@@ -228,7 +228,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       color: Colors.white,
                     ),
                     label: const Text(
-                      'Masuk Quick Demo (Admin DPKP)',
+                      'Masuk Quick Demo (Admin Disperwaskim)',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

@@ -28,10 +28,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $adminUser = User::create([
-            'username' => 'admin_dpkp',
+            'username' => 'admin_disperwaskim',
             'password' => Hash::make('admin123'),
             'nama' => 'Rizki Pratama, S.T.',
-            'role' => 'admin_dpkp',
+            'role' => 'admin_disperwaskim',
             'nip' => '19930512 202010 1 001',
             'jabatan' => 'Verifikator Administrasi',
             'email' => 'rizki.pratama@tasikmalayakota.go.id',

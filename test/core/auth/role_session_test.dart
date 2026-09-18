@@ -12,9 +12,9 @@ void main() {
     expect(notifier.signInFromUsername('Perwaskim'), AppRole.perwaskim);
     expect(notifier.state.username, 'perwaskim');
     notifier.signOut();
-    expect(notifier.signInFromUsername('ADMIN_DPKP'), AppRole.admin);
+    expect(notifier.signInFromUsername('ADMIN_DISPERWASKIM'), AppRole.admin);
     expect(notifier.state.isAuthenticated, isTrue);
-    expect(notifier.state.username, 'admin_dpkp');
+    expect(notifier.state.username, 'admin_disperwaskim');
 
     notifier.signOut();
     expect(notifier.state.role, AppRole.guest);

@@ -114,9 +114,9 @@ class _DeveloperHomeScreen extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     'Selamat Datang, Pengembang!',
                     style: TextStyle(
@@ -179,7 +179,7 @@ class _DeveloperHomeScreen extends StatelessWidget {
                   'Perumahan Grand Residence Blok B',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
-                subtitle: Text('Status: Verifikasi Berkas Teknis (DPKP)'),
+                subtitle: Text('Status: Verifikasi Berkas Teknis (Disperwaskim)'),
                 trailing: Chip(
                   label: Text(
                     'Proses',
@@ -226,7 +226,7 @@ class _DeveloperHomeScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Icon(icon, color: color, size: 28),
@@ -270,7 +270,7 @@ class _DeveloperProfileScreen extends StatelessWidget {
               'PT Contoh Property Sejahtera',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            subtitle: Text('Developer Terverifikasi DPKP'),
+            subtitle: Text('Developer Terverifikasi Disperwaskim'),
           ),
           const Divider(),
           _buildItem(context, 'Profil Perusahaan', Icons.domain_outlined),

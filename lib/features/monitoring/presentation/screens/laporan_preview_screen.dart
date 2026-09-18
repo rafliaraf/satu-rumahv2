@@ -135,7 +135,7 @@ class _LaporanPreviewScreenState extends ConsumerState<LaporanPreviewScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Kop Surat DPKP
+          // Kop Surat Disperwaskim
           const Text(
             'PEMERINTAH KOTA TASIKMALAYA',
             style: TextStyle(

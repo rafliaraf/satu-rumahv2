@@ -225,7 +225,7 @@ class MonitoringFormNotifier extends StateNotifier<MonitoringFormState> {
       ],
       statusHasilEvaluasi: StatusHasilEvaluasi.tidakSesuaiSiteplan,
       pelaksanaNama: 'Drs. Rian Hidayat, M.Si',
-      pelaksanaJabatan: 'Ketua Tim Monitoring & Evaluasi DPKP',
+      pelaksanaJabatan: 'Ketua Tim Monitoring & Evaluasi Disperwaskim',
       ditemuiNama: 'Budi Santoso, S.T.',
       ditemuiJabatan: 'Site Manager PT ABC Property',
       photoPaths: const [],
@@ -440,7 +440,7 @@ class MonitoringFormNotifier extends StateNotifier<MonitoringFormState> {
           : 'Drs. Rian Hidayat, M.Si',
       pelaksanaJabatan: report.pelaksanaJabatan.isNotEmpty
           ? report.pelaksanaJabatan
-          : 'Ketua Tim Monitoring & Evaluasi DPKP',
+          : 'Ketua Tim Monitoring & Evaluasi Disperwaskim',
       lokasiPerumahan: report.lokasiPerumahan,
       statusHasilEvaluasi: status,
       temuanLapangan: report.temuanLapangan,

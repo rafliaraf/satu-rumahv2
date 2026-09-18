@@ -433,7 +433,7 @@ class _PengajuanDetailScreenState extends ConsumerState<PengajuanDetailScreen> {
             'Survey dijadwalkan (${item.tanggalSurvey!.day}/${item.tanggalSurvey!.month}/${item.tanggalSurvey!.year})';
       }
     } else if (status == StatusTahapPengajuan.verifikasiTeknis) {
-      step2Desc = 'Penjadwalan survey oleh Tim DPKP';
+      step2Desc = 'Penjadwalan survey oleh Tim Disperwaskim';
     }
 
     return Card(
@@ -536,7 +536,7 @@ class _PengajuanDetailScreenState extends ConsumerState<PengajuanDetailScreen> {
                         ),
                       ),
                       Text(
-                        'Hasil Evaluasi Teknis DPKP',
+                        'Hasil Evaluasi Teknis Disperwaskim',
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
