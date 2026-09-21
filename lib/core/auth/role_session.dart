@@ -77,7 +77,6 @@ class RoleSessionNotifier extends StateNotifier<RoleSessionState> {
     final normalized = username.trim().toLowerCase();
     if (normalized.isEmpty) return AppRole.guest;
     if (normalized == 'admin_disperwaskim' ||
-        normalized == 'admin_dpkp' ||
         normalized.startsWith('admin')) {
       return AppRole.admin;
     }
