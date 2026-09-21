@@ -196,7 +196,7 @@ class TabBeranda extends ConsumerWidget {
                       vertical: 24,
                       horizontal: 16,
                     ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: AppColors.actionPrimary,
                       borderRadius: AppRadii.card,
                     ),

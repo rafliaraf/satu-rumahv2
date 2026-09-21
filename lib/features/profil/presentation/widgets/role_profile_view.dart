@@ -457,7 +457,7 @@ class RoleProfileView extends StatelessWidget {
       ),
       leading: Container(
         padding: const EdgeInsets.all(AppSpacing.sm),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: AppColors.surfaceSubtle,
           borderRadius: AppRadii.control,
         ),

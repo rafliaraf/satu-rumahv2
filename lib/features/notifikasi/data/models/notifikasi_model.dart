@@ -49,7 +49,7 @@ extension JenisNotifikasiX on JenisNotifikasi {
   }
 
   Color get backgroundColor {
-    return color.withOpacity(0.12);
+    return color.withValues(alpha: 0.12);
   }
 }
 

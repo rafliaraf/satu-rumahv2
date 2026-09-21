@@ -185,17 +185,17 @@ class _NotifikasiListScreenState extends ConsumerState<NotifikasiListScreen> {
           // List Items
           Expanded(
             child: filteredNotifs.isEmpty
-                ? Center(
+                ? const Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.notifications_off_outlined,
                           size: 64,
                           color: AppColors.grey400,
                         ),
-                        const SizedBox(height: 12),
-                        const Text(
+                        SizedBox(height: 12),
+                        Text(
                           'Tidak ada notifikasi.',
                           style: TextStyle(
                             color: AppColors.grey600,

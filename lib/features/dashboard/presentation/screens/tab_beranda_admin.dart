@@ -91,7 +91,7 @@ class TabBerandaAdmin extends ConsumerWidget {
                     _buildMockupStatCard(
                       context,
                       count:
-                          '${metrics.pengajuanBaruCount.toString().padLeft(2, '0')}',
+                          metrics.pengajuanBaruCount.toString().padLeft(2, '0'),
                       label: 'Pengajuan Baru',
                       icon: Icons.article_outlined,
                       iconBgColor: AppColors.champagneToast.withValues(
@@ -103,7 +103,7 @@ class TabBerandaAdmin extends ConsumerWidget {
                     _buildMockupStatCard(
                       context,
                       count:
-                          '${metrics.verifikasiTeknisCount.toString().padLeft(2, '0')}',
+                          metrics.verifikasiTeknisCount.toString().padLeft(2, '0'),
                       label: 'Menunggu Teknis',
                       icon: Icons.access_time,
                       iconBgColor: AppColors.champagneToast.withValues(
@@ -115,7 +115,7 @@ class TabBerandaAdmin extends ConsumerWidget {
                     _buildMockupStatCard(
                       context,
                       count:
-                          '${metrics.surveyTerjadwalCount.toString().padLeft(2, '0')}',
+                          metrics.surveyTerjadwalCount.toString().padLeft(2, '0'),
                       label: 'Survey Minggu Ini',
                       icon: Icons.calendar_today_outlined,
                       iconBgColor: AppColors.pistachioCream.withValues(
@@ -127,7 +127,7 @@ class TabBerandaAdmin extends ConsumerWidget {
                     _buildMockupStatCard(
                       context,
                       count:
-                          '${metrics.perluTindakLanjutCount.toString().padLeft(2, '0')}',
+                          metrics.perluTindakLanjutCount.toString().padLeft(2, '0'),
                       label: 'Perlu Tindak Lanjut',
                       icon: Icons.error_outline,
                       iconBgColor: AppColors.statusAttention.withValues(
@@ -417,7 +417,7 @@ class TabBerandaAdmin extends ConsumerWidget {
   }) {
     return Card(
       elevation: 0,
-      shape: RoundedRectangleBorder(borderRadius: AppRadii.card),
+      shape: const RoundedRectangleBorder(borderRadius: AppRadii.card),
       color: Colors.white,
       child: InkWell(
         borderRadius: AppRadii.card,
