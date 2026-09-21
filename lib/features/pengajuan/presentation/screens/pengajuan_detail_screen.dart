@@ -25,8 +25,9 @@ MonitoringModel? findLinkedFinalMonitoring(
   String? beritaAcaraPath,
 }) {
   final normalizedId = pengajuanId.trim();
-  if (normalizedId.isEmpty || beritaAcaraPath?.trim().isNotEmpty != true)
+  if (normalizedId.isEmpty || beritaAcaraPath?.trim().isNotEmpty != true) {
     return null;
+  }
 
   for (final report in reports) {
     if (!report.isDraft && report.pengajuanId?.trim() == normalizedId) {
@@ -890,51 +891,74 @@ class _PengajuanDetailScreenState extends ConsumerState<PengajuanDetailScreen> {
     bool isPassed,
     bool isCurrent,
   ) {
+    final Color circleColor = isPassed
+        ? AppColors.statusSuccess
+        : isCurrent
+        ? AppColors.chilliDust
+        : AppColors.grey300;
+
+    final Color lineColor =
+        isPassed ? AppColors.statusSuccess : AppColors.grey300;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Column(
           children: [
             Container(
-              width: 16,
-              height: 16,
+              width: 18,
+              height: 18,
               decoration: BoxDecoration(
-                color: isPassed
-                    ? AppColors.pistachioCream
-                    : isCurrent
-                    ? AppColors.chilliDust
-                    : AppColors.grey300,
+                color: isCurrent ? AppColors.surfaceAttention : circleColor,
                 shape: BoxShape.circle,
+                border: Border.all(
+                  color: circleColor,
+                  width: isCurrent ? 3 : 2,
+                ),
               ),
+              child: isPassed
+                  ? const Center(
+                      child: Icon(
+                        Icons.check,
+                        size: 11,
+                        color: Colors.white,
+                      ),
+                    )
+                  : null,
             ),
             Container(
               width: 2,
-              height: 40,
-              color: isPassed ? AppColors.pistachioCream : AppColors.grey300,
+              height: 38,
+              color: lineColor,
             ),
           ],
         ),
         const SizedBox(width: 12),
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: AppTextStyles.bodyMedium.copyWith(
-                  fontWeight: isCurrent ? FontWeight.bold : FontWeight.normal,
-                  color: isCurrent
-                      ? AppColors.chilliDust
-                      : AppColors.cocoaBeanRoast,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: AppTextStyles.bodyMedium.copyWith(
+                    fontWeight:
+                        isCurrent || isPassed ? FontWeight.bold : FontWeight.w500,
+                    color: isCurrent
+                        ? AppColors.chilliDust
+                        : AppColors.cocoaBeanRoast,
+                  ),
                 ),
-              ),
-              Text(
-                desc,
-                style: AppTextStyles.bodySmall.copyWith(
-                  color: AppColors.grey600,
+                const SizedBox(height: 2),
+                Text(
+                  desc,
+                  style: AppTextStyles.bodySmall.copyWith(
+                    color: AppColors.textMuted,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],

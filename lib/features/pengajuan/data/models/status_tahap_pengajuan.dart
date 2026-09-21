@@ -51,7 +51,7 @@ extension StatusTahapPengajuanX on StatusTahapPengajuan {
   }
 
   Color get backgroundColor {
-    return color.withOpacity(0.12);
+    return color.withValues(alpha: 0.12);
   }
 
   IconData get icon {

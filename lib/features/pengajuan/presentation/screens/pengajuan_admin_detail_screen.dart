@@ -242,7 +242,7 @@ class _PengajuanAdminDetailScreenState
                         vertical: 6,
                       ),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFE8D4A2),
+                        color: AppColors.champagneToast,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
@@ -251,6 +251,7 @@ class _PengajuanAdminDetailScreenState
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
                           color: AppColors.cocoaBeanRoast,
+                          letterSpacing: 0.6,
                         ),
                       ),
                     ),
@@ -263,8 +264,11 @@ class _PengajuanAdminDetailScreenState
                           vertical: 8,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.16),
+                          color: Colors.white.withValues(alpha: 0.18),
                           borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.3),
+                          ),
                         ),
                         child: const Row(
                           children: [
@@ -301,8 +305,9 @@ class _PengajuanAdminDetailScreenState
             child: Container(
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
-                color: const Color(0xFFEBE8DC),
+                color: AppColors.surfaceMuted,
                 borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: AppColors.borderSubtle),
               ),
               child: Row(
                 children: [
@@ -550,16 +555,17 @@ class _PengajuanAdminDetailScreenState
                                       ),
                                       decoration: BoxDecoration(
                                         color: isVerified == true
-                                            ? const Color(0xFFE2EED7)
-                                            : const Color(0xFFF0EFEA),
+                                            ? AppColors.surfaceSuccess
+                                            : AppColors.surfaceMuted,
                                         borderRadius: BorderRadius.circular(20),
                                         border: Border.all(
                                           color: isVerified == true
-                                              ? const Color(0xFF5D7B38)
-                                              : Colors.transparent,
+                                              ? AppColors.statusSuccess
+                                              : AppColors.borderSubtle,
                                         ),
                                       ),
                                       child: Row(
+                                        mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Icon(
                                             isVerified == true
@@ -567,10 +573,10 @@ class _PengajuanAdminDetailScreenState
                                                 : Icons.radio_button_unchecked,
                                             size: 14,
                                             color: isVerified == true
-                                                ? const Color(0xFF5D7B38)
-                                                : AppColors.grey600,
+                                                ? AppColors.statusSuccess
+                                                : AppColors.textMuted,
                                           ),
-                                          const SizedBox(width: 4),
+                                          const SizedBox(width: 5),
                                           Text(
                                             'Sesuai',
                                             style: TextStyle(
@@ -579,8 +585,8 @@ class _PengajuanAdminDetailScreenState
                                                   ? FontWeight.bold
                                                   : FontWeight.normal,
                                               color: isVerified == true
-                                                  ? const Color(0xFF5D7B38)
-                                                  : AppColors.cocoaBeanRoast,
+                                                  ? AppColors.statusSuccess
+                                                  : AppColors.textMuted,
                                             ),
                                           ),
                                         ],
@@ -608,16 +614,17 @@ class _PengajuanAdminDetailScreenState
                                       ),
                                       decoration: BoxDecoration(
                                         color: isVerified == false
-                                            ? const Color(0xFFF9EAE8)
-                                            : const Color(0xFFF0EFEA),
+                                            ? AppColors.surfaceAttention
+                                            : AppColors.surfaceMuted,
                                         borderRadius: BorderRadius.circular(20),
                                         border: Border.all(
                                           color: isVerified == false
                                               ? AppColors.chilliDust
-                                              : Colors.transparent,
+                                              : AppColors.borderSubtle,
                                         ),
                                       ),
                                       child: Row(
+                                        mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Icon(
                                             isVerified == false
@@ -626,9 +633,9 @@ class _PengajuanAdminDetailScreenState
                                             size: 14,
                                             color: isVerified == false
                                                 ? AppColors.chilliDust
-                                                : AppColors.grey600,
+                                                : AppColors.textMuted,
                                           ),
-                                          const SizedBox(width: 4),
+                                          const SizedBox(width: 5),
                                           Text(
                                             'Tidak Sesuai',
                                             style: TextStyle(
@@ -638,7 +645,7 @@ class _PengajuanAdminDetailScreenState
                                                   : FontWeight.normal,
                                               color: isVerified == false
                                                   ? AppColors.chilliDust
-                                                  : AppColors.cocoaBeanRoast,
+                                                  : AppColors.textMuted,
                                             ),
                                           ),
                                         ],

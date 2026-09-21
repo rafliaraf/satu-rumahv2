@@ -40,12 +40,15 @@ class _PengajuanSayaListScreenState
           item.id.toLowerCase().contains(_searchQuery.toLowerCase());
 
       if (_filterStatus == 'Semua') return matchesSearch;
-      if (_filterStatus == 'Proses')
+      if (_filterStatus == 'Proses') {
         return matchesSearch && item.status == 'Dalam Proses';
-      if (_filterStatus == 'Selesai')
+      }
+      if (_filterStatus == 'Selesai') {
         return matchesSearch && item.status == 'Selesai';
-      if (_filterStatus == 'Revisi')
+      }
+      if (_filterStatus == 'Revisi') {
         return matchesSearch && item.status == 'Perlu Perbaikan';
+      }
       return matchesSearch;
     }).toList();
 

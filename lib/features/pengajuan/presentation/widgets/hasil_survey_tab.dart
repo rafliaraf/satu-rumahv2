@@ -114,8 +114,8 @@ class _HasilSurveyTabState extends ConsumerState<HasilSurveyTab> {
           Container(
             width: 72,
             height: 72,
-            decoration: BoxDecoration(
-              color: const Color(0xFFF0EFEA),
+            decoration: const BoxDecoration(
+              color: Color(0xFFF0EFEA),
               shape: BoxShape.circle,
             ),
             child: const Icon(

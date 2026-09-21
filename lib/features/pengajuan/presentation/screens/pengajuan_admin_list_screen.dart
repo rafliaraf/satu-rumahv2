@@ -119,7 +119,7 @@ class _PengajuanAdminListScreenState
                         horizontal: 16,
                         vertical: 10,
                       ),
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                         borderRadius: AppRadii.pill,
                         borderSide: BorderSide.none,
                       ),
