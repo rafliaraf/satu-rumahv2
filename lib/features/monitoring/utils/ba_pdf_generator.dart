@@ -134,7 +134,7 @@ class BaPdfGenerator {
     return pw.Column(
       crossAxisAlignment: pw.CrossAxisAlignment.start,
       children: [
-        pw.Text(title, style: pw.TextStyle(fontSize: 11, fontWeight: pw.FontWeight.bold)),
+        pw.Text(title, style: const pw.TextStyle(fontSize: 11, fontWeight: pw.FontWeight.bold)),
         pw.SizedBox(height: 4),
         if (valid.isEmpty)
           pw.Text('• -', style: const pw.TextStyle(fontSize: 11))

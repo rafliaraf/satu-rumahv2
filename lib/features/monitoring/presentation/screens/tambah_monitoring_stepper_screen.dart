@@ -532,9 +532,9 @@ class _TambahMonitoringStepperScreenState
         const SizedBox(height: 28),
 
         // Wet Signature Section Header
-        Row(
+        const Row(
           children: [
-            const Text(
+            Text(
               'Tanda Tangan Basah ',
               style: TextStyle(
                 fontSize: 14,
@@ -542,9 +542,9 @@ class _TambahMonitoringStepperScreenState
                 color: AppColors.cocoaBeanRoast,
               ),
             ),
-            Text(
+            const Text(
               '(Wet Signature)',
-              style: TextStyle(fontSize: 12, color: AppColors.grey600),
+              style: const TextStyle(fontSize: 12, color: AppColors.grey600),
             ),
           ],
         ),
@@ -675,17 +675,17 @@ class _TambahMonitoringStepperScreenState
               horizontal: 16,
               vertical: 14,
             ),
-            border: OutlineInputBorder(
+            border: const OutlineInputBorder(
               borderRadius: AppRadii.card,
-              borderSide: const BorderSide(color: AppColors.grey300),
+              borderSide: BorderSide(color: AppColors.grey300),
             ),
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: const OutlineInputBorder(
               borderRadius: AppRadii.card,
-              borderSide: const BorderSide(color: AppColors.grey300),
+              borderSide: BorderSide(color: AppColors.grey300),
             ),
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: const OutlineInputBorder(
               borderRadius: AppRadii.card,
-              borderSide: const BorderSide(color: AppColors.actionPrimary),
+              borderSide: BorderSide(color: AppColors.actionPrimary),
             ),
           ),
         ),
@@ -731,7 +731,7 @@ class _TambahMonitoringStepperScreenState
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 10,
             offset: const Offset(0, -4),
           ),
@@ -746,7 +746,7 @@ class _TambahMonitoringStepperScreenState
               backgroundColor: AppColors.actionPrimary,
               foregroundColor: Colors.white,
               elevation: 0,
-              shape: RoundedRectangleBorder(borderRadius: AppRadii.pill),
+              shape: const RoundedRectangleBorder(borderRadius: AppRadii.pill),
             ),
             onPressed: () {
               if (formState.currentStep == 0) {

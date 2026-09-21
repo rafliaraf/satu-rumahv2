@@ -33,11 +33,11 @@ extension StatusHasilEvaluasiX on StatusHasilEvaluasi {
   Color get backgroundColor {
     switch (this) {
       case StatusHasilEvaluasi.sesuaiSiteplan:
-        return AppColors.pistachioCream.withOpacity(0.25);
+        return AppColors.pistachioCream.withValues(alpha: 0.25);
       case StatusHasilEvaluasi.tidakSesuaiSiteplan:
-        return AppColors.chilliDust.withOpacity(0.12);
+        return AppColors.chilliDust.withValues(alpha: 0.12);
       case StatusHasilEvaluasi.perluEvaluasiLanjutan:
-        return AppColors.warning.withOpacity(0.12);
+        return AppColors.warning.withValues(alpha: 0.12);
     }
   }
 

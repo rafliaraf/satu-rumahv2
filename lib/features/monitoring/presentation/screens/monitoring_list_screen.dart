@@ -143,17 +143,17 @@ class _MonitoringListScreenState extends ConsumerState<MonitoringListScreen> {
                         horizontal: 16,
                         vertical: 12,
                       ),
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                         borderRadius: AppRadii.pill,
-                        borderSide: const BorderSide(color: AppColors.grey300),
+                        borderSide: BorderSide(color: AppColors.grey300),
                       ),
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: const OutlineInputBorder(
                         borderRadius: AppRadii.pill,
-                        borderSide: const BorderSide(color: AppColors.grey300),
+                        borderSide: BorderSide(color: AppColors.grey300),
                       ),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                         borderRadius: AppRadii.pill,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: AppColors.actionPrimary,
                         ),
                       ),
@@ -228,7 +228,7 @@ class _MonitoringListScreenState extends ConsumerState<MonitoringListScreen> {
                         ? AppColors.actionPrimary
                         : AppColors.grey300,
                   ),
-                  shape: RoundedRectangleBorder(borderRadius: AppRadii.pill),
+                  shape: const RoundedRectangleBorder(borderRadius: AppRadii.pill),
                   showCheckmark: false,
                   visualDensity: VisualDensity.compact,
                 );

@@ -24,7 +24,7 @@ class MonitoringRepository {
         'Pemeriksaan ulang fisik PJU pada tanggal 5 Juni 2024.',
       ],
       pelaksanaNama: 'Ir. Ahmad Subagja',
-      pelaksanaJabatan: 'Ketua Tim Evaluasi DPKP',
+      pelaksanaJabatan: 'Ketua Tim Evaluasi Disperwaskim',
       ditemuiNama: 'H. Endang',
       ditemuiJabatan: 'Perwakilan PT ABC Property',
     ),
