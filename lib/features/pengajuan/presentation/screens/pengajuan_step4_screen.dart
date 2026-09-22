@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/app_button.dart';
+import '../../../../core/widgets/app_header.dart';
 import '../../../../core/widgets/stepper_header.dart';
 import '../../../../core/utils/file_picker_util.dart';
 import '../providers/pengajuan_form_controller.dart';
@@ -69,9 +70,10 @@ class PengajuanStep4Screen extends ConsumerWidget {
 
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: AppBar(
-        title: const Text('Dokumen Teknis (Step 4)'),
-        elevation: 0,
+      appBar: const AppHeader(
+        title: 'Dokumen Teknis (Step 4)',
+        showNotifications: false,
+        showBackButton: true,
       ),
       body: Column(
         children: [

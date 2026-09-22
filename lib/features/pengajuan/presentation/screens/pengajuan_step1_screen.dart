@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/app_button.dart';
+import '../../../../core/widgets/app_header.dart';
 import '../../../../core/widgets/app_text_field.dart';
 import '../../../../core/widgets/stepper_header.dart';
 import '../providers/pengajuan_form_controller.dart';
@@ -68,8 +69,10 @@ class _PengajuanStep1ScreenState extends ConsumerState<PengajuanStep1Screen> {
 
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: AppBar(
-        title: const Text('Pengajuan Baru (Step 1)'),
+      appBar: AppHeader(
+        title: 'Pengajuan Baru (Step 1)',
+        showNotifications: false,
+        showBackButton: true,
         actions: [
           TextButton(
             onPressed: () {
@@ -85,7 +88,7 @@ class _PengajuanStep1ScreenState extends ConsumerState<PengajuanStep1Screen> {
             child: const Text(
               'Isi Dummy',
               style: TextStyle(
-                color: AppColors.chilliDust,
+                color: Colors.white70,
                 fontWeight: FontWeight.bold,
               ),
             ),

@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/auth/role_session.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/widgets/app_bottom_navigation.dart';
+import '../../../../core/widgets/app_header.dart';
 import '../../../../core/widgets/route_feedback.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -45,42 +47,37 @@ class _DeveloperMainScreenState extends State<DeveloperMainScreen> {
 
     return Scaffold(
       body: IndexedStack(index: _currentIndex, children: pages),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: AppBottomNavigation(
         currentIndex: _currentIndex,
-        selectedItemColor: AppColors.chilliDust,
-        unselectedItemColor: AppColors.grey600,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        elevation: 8,
         onTap: (index) {
           setState(() {
             _currentIndex = index;
           });
         },
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            activeIcon: Icon(Icons.home),
+          AppBottomNavigationItem(
+            icon: Icons.home_outlined,
+            activeIcon: Icons.home,
             label: 'Beranda',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.assignment_outlined),
-            activeIcon: Icon(Icons.assignment),
+          AppBottomNavigationItem(
+            icon: Icons.assignment_outlined,
+            activeIcon: Icons.assignment,
             label: 'Pengajuan',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.analytics_outlined),
-            activeIcon: Icon(Icons.analytics),
+          AppBottomNavigationItem(
+            icon: Icons.analytics_outlined,
+            activeIcon: Icons.analytics,
             label: 'Monitoring',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_outlined),
-            activeIcon: Icon(Icons.notifications),
+          AppBottomNavigationItem(
+            icon: Icons.notifications_outlined,
+            activeIcon: Icons.notifications,
             label: 'Notifikasi',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            activeIcon: Icon(Icons.person),
+          AppBottomNavigationItem(
+            icon: Icons.person_outline,
+            activeIcon: Icons.person,
             label: 'Profil',
           ),
         ],
@@ -95,9 +92,10 @@ class _DeveloperHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SATU RUMAH - Pengembang'),
-        automaticallyImplyLeading: false,
+      appBar: const AppHeader(
+        title: 'SATU RUMAH',
+        subtitle: 'Pengembang',
+        showNotifications: true,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
@@ -254,9 +252,9 @@ class _DeveloperProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profil Pengembang'),
-        automaticallyImplyLeading: false,
+      appBar: const AppHeader(
+        title: 'Profil Pengembang',
+        showNotifications: false,
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 12),
@@ -323,7 +321,10 @@ class _DeveloperPlaceholderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title), automaticallyImplyLeading: false),
+      appBar: AppHeader(
+        title: title,
+        showNotifications: false,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

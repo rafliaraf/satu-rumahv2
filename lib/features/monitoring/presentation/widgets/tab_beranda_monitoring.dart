@@ -100,7 +100,7 @@ class TabBerandaMonitoring extends ConsumerWidget {
                               vertical: 2,
                             ),
                             decoration: BoxDecoration(
-                              color: AppColors.pistachioCream.withOpacity(0.3),
+                              color: AppColors.pistachioCream.withValues(alpha: 0.3),
                               borderRadius: AppRadii.control,
                             ),
                             child: Text(
@@ -127,18 +127,18 @@ class TabBerandaMonitoring extends ConsumerWidget {
                 borderRadius: AppRadii.card,
                 child: Container(
                   padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppColors.actionPrimary,
                     borderRadius: AppRadii.card,
                   ),
                   child: Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.add_circle_outline,
                         color: Colors.white,
                         size: 36,
                       ),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -150,7 +150,7 @@ class TabBerandaMonitoring extends ConsumerWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(height: 4),
+                            const SizedBox(height: 4),
                             Text(
                               'Catat hasil inspeksi hari ini',
                               style: AppTextStyles.bodySmall.copyWith(
@@ -160,7 +160,7 @@ class TabBerandaMonitoring extends ConsumerWidget {
                           ],
                         ),
                       ),
-                      Icon(Icons.chevron_right, color: Colors.white),
+                      const Icon(Icons.chevron_right, color: Colors.white),
                     ],
                   ),
                 ),
@@ -328,7 +328,7 @@ class TabBerandaMonitoring extends ConsumerWidget {
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: AppColors.actionPrimary,
                                     elevation: 0,
-                                    shape: RoundedRectangleBorder(
+                                    shape: const RoundedRectangleBorder(
                                       borderRadius: AppRadii.control,
                                     ),
                                   ),
@@ -371,7 +371,7 @@ class TabBerandaMonitoring extends ConsumerWidget {
                     ),
                   ),
                   TextButton(
-                    onPressed: () => context.go('/monitoring/lapangan/riwayat'),
+                    onPressed: () => context.push('/monitoring/lapangan/riwayat'),
                     child: Text(
                       'Lihat Semua',
                       style: AppTextStyles.labelLarge.copyWith(
@@ -400,9 +400,9 @@ class TabBerandaMonitoring extends ConsumerWidget {
                         elevation: 0,
                         color: Colors.white,
                         margin: const EdgeInsets.only(bottom: 12),
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                           borderRadius: AppRadii.card,
-                          side: const BorderSide(color: AppColors.grey200),
+                          side: BorderSide(color: AppColors.grey200),
                         ),
                         child: InkWell(
                           onTap: () => context.push(

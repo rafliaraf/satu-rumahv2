@@ -409,10 +409,15 @@ class MonitoringFormNotifier extends StateNotifier<MonitoringFormState> {
   }
 
   bool _isEligibleSurveyStage(Pengajuan pengajuan) {
+    // Pengajuan valid jika berada di tahap survey, atau memiliki jadwal survey,
+    // atau sedang dalam tahap verifikasi teknis & monitoring yang sedang disurvey
     return pengajuan.statusTahap == StatusTahapPengajuan.surveyLapangan ||
+        pengajuan.statusTahap == StatusTahapPengajuan.verifikasiTeknis ||
+        pengajuan.tanggalSurvey != null ||
+        pengajuan.riwayatSurvey.isNotEmpty ||
         (pengajuan.statusTahap == StatusTahapPengajuan.perluPerbaikan &&
-            pengajuan.tahapAsalPerbaikan ==
-                StatusTahapPengajuan.surveyLapangan);
+            (pengajuan.tahapAsalPerbaikan == StatusTahapPengajuan.surveyLapangan ||
+             pengajuan.tahapAsalPerbaikan == StatusTahapPengajuan.verifikasiTeknis));
   }
 
   String _normalizeHousingName(String value) {

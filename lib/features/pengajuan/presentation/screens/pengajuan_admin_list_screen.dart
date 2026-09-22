@@ -5,7 +5,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_radii.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/prototype_data_banner.dart';
-import '../../../dashboard/presentation/widgets/admin_header_widget.dart';
+import '../../../../core/widgets/app_header.dart';
 import '../../data/models/status_tahap_pengajuan.dart';
 import '../providers/pengajuan_form_controller.dart';
 
@@ -52,7 +52,7 @@ class _PengajuanAdminListScreenState
     }).toList();
 
     return Scaffold(
-      appBar: const AdminHeaderWidget(),
+      appBar: const AppHeader(title: 'Pemerintah Kota Tasikmalaya', subtitle: 'SATU RUMAH'),
       backgroundColor: AppColors.background,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

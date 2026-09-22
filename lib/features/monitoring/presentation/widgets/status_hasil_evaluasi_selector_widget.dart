@@ -60,14 +60,14 @@ class StatusHasilEvaluasiSelectorWidget extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Radio<StatusHasilEvaluasi>(
-                      value: status,
-                      groupValue: selectedStatus,
-                      activeColor: status.color,
-                      onChanged: (val) {
-                        if (val != null) onChanged(val);
-                      },
+                    Icon(
+                      isSelected
+                          ? Icons.radio_button_checked
+                          : Icons.radio_button_unchecked,
+                      color: isSelected ? status.color : AppColors.grey400,
+                      size: 22,
                     ),
+                    const SizedBox(width: 6),
                     Icon(
                       status.icon,
                       color: isSelected ? status.color : AppColors.grey600,

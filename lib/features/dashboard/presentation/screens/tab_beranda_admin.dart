@@ -8,7 +8,7 @@ import '../../../../core/widgets/data_state_view.dart';
 import '../../../../core/widgets/prototype_data_banner.dart';
 import '../../../pengajuan/data/models/status_tahap_pengajuan.dart';
 import '../providers/admin_dashboard_provider.dart';
-import '../widgets/admin_header_widget.dart';
+import '../../../../core/widgets/app_header.dart';
 
 class TabBerandaAdmin extends ConsumerWidget {
   const TabBerandaAdmin({super.key});
@@ -18,7 +18,7 @@ class TabBerandaAdmin extends ConsumerWidget {
     final metricsState = ref.watch(adminDashboardMetricsAsyncProvider);
 
     return Scaffold(
-      appBar: const AdminHeaderWidget(),
+      appBar: const AppHeader(title: 'Pemerintah Kota Tasikmalaya', subtitle: 'SATU RUMAH'),
       backgroundColor: AppColors.background,
       body: metricsState.when(
         loading: () => const DataStateView.loading(),

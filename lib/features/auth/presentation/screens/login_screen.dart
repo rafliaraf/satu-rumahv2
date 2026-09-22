@@ -55,22 +55,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     context.go('/dashboard');
   }
 
-  void _loginAsAdmin() {
-    _usernameController.text = 'admin_dpkp';
-    _passwordController.text = 'admin123';
-    ref
-        .read(roleSessionProvider.notifier)
-        .signIn(AppRole.admin, username: 'admin_dpkp');
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text(
-          'Masuk sebagai Admin Internal Disperwaskim (Rizki Pratama, S.T.)',
-        ),
-        duration: Duration(seconds: 2),
-      ),
-    );
-    context.go('/admin');
-  }
 
   void _loginAsTimMonitoring() {
     _usernameController.text = 'tim_monitoring_perwaskim';
@@ -211,30 +195,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   text: 'Masuk Quick Demo (Pengembang)',
                   icon: const Icon(Icons.business),
                   onPressed: _loginAsDeveloper,
-                ),
-                const SizedBox(height: 12),
-                SizedBox(
-                  height: 48,
-                  child: ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.chilliDust,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: _loginAsAdmin,
-                    icon: const Icon(
-                      Icons.admin_panel_settings,
-                      color: Colors.white,
-                    ),
-                    label: const Text(
-                      'Masuk Quick Demo (Admin Disperwaskim)',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
                 ),
                 const SizedBox(height: 12),
                 SizedBox(

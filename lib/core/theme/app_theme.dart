@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
+import 'app_role_theme.dart';
 import 'app_text_styles.dart';
+import '../auth/role_session.dart';
 
 class AppTheme {
   static ThemeData get lightTheme {
@@ -116,6 +118,63 @@ class AppTheme {
         hintStyle: AppTextStyles.bodyMedium.copyWith(
           color: AppColors.textMuted,
         ),
+      ),
+    );
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────
+  /// Mengembalikan [ThemeData] yang sudah disesuaikan dengan warna peran aktif.
+  ///
+  /// Fungsi ini mengambil [lightTheme] sebagai basis, kemudian menimpa
+  /// [AppBarTheme] dan [BottomNavigationBarThemeData] dengan warna primer
+  /// dari peran yang diberikan — sehingga seluruh app otomatis berubah warna
+  /// cukup dengan mengganti [role] tanpa menyentuh widget individual.
+  ///
+  /// Contoh penggunaan di [MaterialApp]:
+  /// ```dart
+  /// theme: AppTheme.getThemeByRole(ref.watch(roleSessionProvider).role),
+  /// ```
+  static ThemeData getThemeByRole(AppRole role) {
+    final primary = AppRoleTheme.getPrimaryColor(role);
+    final headerBg = AppRoleTheme.getHeaderBackground(role);
+    final headerTitle = AppRoleTheme.getHeaderTitleColor(role);
+    final headerSubtitle = AppRoleTheme.getHeaderSubtitleColor(role);
+    final isAuthority = AppRoleTheme.isAuthorityHeader(role);
+
+    return lightTheme.copyWith(
+      // Warna skema primer mengikuti role
+      colorScheme: lightTheme.colorScheme.copyWith(primary: primary),
+
+      // AppBar: background & foreground sesuai role
+      appBarTheme: AppBarTheme(
+        backgroundColor: headerBg,
+        foregroundColor: headerTitle,
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        iconTheme: IconThemeData(color: headerTitle),
+        actionsIconTheme: IconThemeData(color: headerTitle),
+        titleTextStyle: AppTextStyles.titleLarge.copyWith(
+          color: headerTitle,
+          fontWeight: FontWeight.bold,
+        ),
+        toolbarTextStyle: AppTextStyles.labelMedium.copyWith(
+          color: isAuthority ? headerSubtitle : AppColors.textMuted,
+        ),
+      ),
+
+      // BottomNavigationBar: selected item mengikuti primary role
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: AppRoleTheme.navBackgroundColor,
+        selectedItemColor: primary,
+        unselectedItemColor: AppRoleTheme.unselectedNavColor,
+        showUnselectedLabels: true,
+        type: BottomNavigationBarType.fixed,
+        elevation: 0,
+        selectedLabelStyle: AppTextStyles.labelSmall.copyWith(
+          fontWeight: FontWeight.w600,
+        ),
+        unselectedLabelStyle: AppTextStyles.labelSmall,
       ),
     );
   }

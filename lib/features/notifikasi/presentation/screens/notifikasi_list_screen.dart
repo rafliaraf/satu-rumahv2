@@ -88,16 +88,18 @@ class _NotifikasiListScreenState extends ConsumerState<NotifikasiListScreen> {
 
     return Scaffold(
       appBar: AppHeader(
-        variant: role == AppRole.admin
-            ? AppHeaderVariant.authority
-            : AppHeaderVariant.light,
+        variant: AppHeaderVariant.roleBased,
         title: role == AppRole.admin
             ? 'Pemerintah Kota Tasikmalaya'
-            : 'SATU RUMAH',
-        subtitle: role == AppRole.admin ? 'SATU RUMAH' : null,
+            : (role == AppRole.perwaskim
+                ? 'Pengawasan Lapangan'
+                : 'SATU RUMAH'),
+        subtitle: role == AppRole.admin
+            ? 'SATU RUMAH - Disperwaskim'
+            : (role == AppRole.perwaskim ? 'Disperwaskim' : 'Kotak Notifikasi'),
         showNotifications: false,
       ),
-      backgroundColor: AppColors.surfaceWarm,
+      backgroundColor: AppColors.background,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -189,7 +191,7 @@ class _NotifikasiListScreenState extends ConsumerState<NotifikasiListScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.notifications_off_outlined,
                           size: 64,
                           color: AppColors.grey400,

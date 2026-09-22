@@ -48,4 +48,30 @@ class AppColors {
   static const Color surfaceSuccess = Color(0xFFE2EED7);
   static const Color surfaceInfo = Color(0xFFE8E3CB);
   static const Color surfaceMuted = Color(0xFFF0EFEA);
+
+  // ─── Role Palettes (Sumber Resmi Palet Warna Per-Peran) ───────────────────
+  // Seluruh role menggunakan palet brand RUSTIC yang sama.
+  // Ubah chilliDust di atas → otomatis berlaku ke semua role.
+
+  /// Pengembang / Developer — Brand Rustic (sama dengan brand utama)
+  static const Color roleDeveloperPrimary = chilliDust;
+  static const Color roleDeveloperPrimaryLight = Color(0xFFD62E1F); // chilliDust lighter
+  static const Color roleDeveloperAccent = Color(0xFFF9EAE8); // surfaceAttention warm
+  static const Color roleDeveloperHeaderTitle = Colors.white;
+  static const Color roleDeveloperHeaderSubtitle = champagneToast;
+
+  /// Admin Disperwaskim — Brand Rustic (sama dengan brand utama)
+  static const Color roleAdminPrimary = chilliDust;
+  static const Color roleAdminPrimaryDark = Color(0xFF8C1A10); // chilliDust darker
+  static const Color roleAdminAccent = Color(0xFFF9EAE8); // surfaceAttention warm
+  static const Color roleAdminHeaderSubtitle = champagneToast;
+
+  /// Tim Pengawas Lapangan — Brand Rustic (sama dengan brand utama)
+  static const Color roleFieldPrimary = chilliDust;
+  static const Color roleFieldPrimaryLight = Color(0xFFD62E1F); // chilliDust lighter
+  static const Color roleFieldAccent = Color(0xFFF9EAE8); // surfaceAttention warm
+  static const Color roleFieldHeaderSubtitle = champagneToast;
+
+  /// BottomNavigationBar unselected (semua role)
+  static const Color roleNavUnselected = Color(0xFF94A3B8); // Slate 400
 }

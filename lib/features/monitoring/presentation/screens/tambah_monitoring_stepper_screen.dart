@@ -95,9 +95,9 @@ class _TambahMonitoringStepperScreenState
     });
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.chilliDust,
         elevation: 0,
         centerTitle: true,
         leading: Padding(
@@ -116,11 +116,12 @@ class _TambahMonitoringStepperScreenState
             child: Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(color: AppColors.grey300),
+                border: Border.all(color: Colors.white38),
+                color: Colors.white12,
               ),
               child: const Icon(
                 Icons.arrow_back,
-                color: AppColors.cocoaBeanRoast,
+                color: Colors.white,
                 size: 18,
               ),
             ),
@@ -129,7 +130,7 @@ class _TambahMonitoringStepperScreenState
         title: const Text(
           'Form Monitoring Lapangan',
           style: TextStyle(
-            color: AppColors.cocoaBeanRoast,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),
@@ -148,7 +149,7 @@ class _TambahMonitoringStepperScreenState
               },
               icon: const Icon(
                 Icons.flash_on,
-                color: AppColors.actionPrimary,
+                color: Colors.white70,
                 size: 20,
               ),
             ),
@@ -542,9 +543,9 @@ class _TambahMonitoringStepperScreenState
                 color: AppColors.cocoaBeanRoast,
               ),
             ),
-            const Text(
+            Text(
               '(Wet Signature)',
-              style: const TextStyle(fontSize: 12, color: AppColors.grey600),
+              style: TextStyle(fontSize: 12, color: AppColors.grey600),
             ),
           ],
         ),

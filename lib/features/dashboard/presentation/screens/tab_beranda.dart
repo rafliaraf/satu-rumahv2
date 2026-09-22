@@ -8,6 +8,7 @@ import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/app_header.dart';
 import '../../../../core/widgets/data_state_view.dart';
 import '../../../../core/widgets/prototype_data_banner.dart';
+import '../../../../core/widgets/shortcut_card.dart';
 import '../../../../core/widgets/status_badge.dart';
 import '../../../notifikasi/data/models/notifikasi_model.dart';
 import '../../../notifikasi/presentation/providers/notifikasi_provider.dart';
@@ -231,28 +232,27 @@ class TabBeranda extends ConsumerWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 12,
                   mainAxisSpacing: 12,
-                  childAspectRatio: 1.5,
+                  childAspectRatio: 1.35,
                   children: [
-                    _buildShortcutCard(
-                      Icons.list_alt,
-                      'Pengajuan Saya',
-                      () => _handleShortcut(context, ref, 'Pengajuan Saya'),
+                    ShortcutCard(
+                      icon: Icons.list_alt,
+                      title: 'Pengajuan Saya',
+                      onTap: () => _handleShortcut(context, ref, 'Pengajuan Saya'),
                     ),
-                    _buildShortcutCard(
-                      Icons.notifications_active,
-                      'Notifikasi',
-                      () => _handleShortcut(context, ref, 'Notifikasi'),
+                    ShortcutCard(
+                      icon: Icons.notifications_active,
+                      title: 'Notifikasi',
+                      onTap: () => _handleShortcut(context, ref, 'Notifikasi'),
                     ),
-                    _buildShortcutCard(
-                      Icons.download,
-                      'Format Dokumen',
-                      null,
+                    const ShortcutCard(
+                      icon: Icons.download,
+                      title: 'Format Dokumen',
                       disabled: true,
                     ),
-                    _buildShortcutCard(
-                      Icons.person_pin,
-                      'Profil Saya',
-                      () => _handleShortcut(context, ref, 'Profil Saya'),
+                    ShortcutCard(
+                      icon: Icons.person_pin,
+                      title: 'Profil Saya',
+                      onTap: () => _handleShortcut(context, ref, 'Profil Saya'),
                     ),
                   ],
                 ),
@@ -369,58 +369,4 @@ class TabBeranda extends ConsumerWidget {
     );
   }
 
-  Widget _buildShortcutCard(
-    IconData icon,
-    String title,
-    VoidCallback? onTap, {
-    bool disabled = false,
-  }) {
-    return Semantics(
-      button: true,
-      enabled: !disabled,
-      label: disabled ? '$title, segera hadir' : title,
-      child: Card(
-        color: disabled ? AppColors.surfaceSubtle : Colors.white,
-        child: InkWell(
-          onTap: disabled ? null : onTap,
-          borderRadius: AppRadii.card,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  icon,
-                  color: disabled
-                      ? AppColors.textMuted
-                      : AppColors.actionPrimary,
-                  size: 28,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  title,
-                  style: AppTextStyles.titleSmall.copyWith(
-                    color: disabled
-                        ? AppColors.textMuted
-                        : AppColors.textPrimary,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                if (disabled) ...[
-                  const SizedBox(height: 4),
-                  Text(
-                    'Segera hadir',
-                    style: AppTextStyles.labelSmall.copyWith(
-                      color: AppColors.textMuted,
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 }

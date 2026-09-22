@@ -230,13 +230,12 @@ class PengajuanListNotifier extends StateNotifier<List<Pengajuan>> {
           luasLahan: 34800.0,
           jumlahUnit: 148,
           tipePerumahan: 'Subsidi',
-          status: 'Perlu perbaikan',
-          statusTahap: StatusTahapPengajuan.verifikasiTeknis,
-          tahapAsalPerbaikan: StatusTahapPengajuan.verifikasiTeknis,
+          status: 'Terjadwal',
+          statusTahap: StatusTahapPengajuan.surveyLapangan,
           tanggal: '08 Mei 2025 · 09.21 WIB',
-          catatanPerbaikan:
-              'Terdapat 3 dokumen yang memerlukan perbaikan sebelum proses dapat dilanjutkan ke penjadwalan survey. Scan KTP buram & izin TPS terpadu pada persetujuan lingkungan.',
-          dokumenPerluRevisi: ['ktp', 'rekomendasi_lingkungan'],
+          catatanSurvey:
+              'Seluruh dokumen administrasi & teknis telah diverifikasi sesuai. Survey lokasi dijadwalkan tanggal 22 Mei 2025 pukul 09.00 WIB.',
+          dokumenPerluRevisi: const [],
           uploadedDocs: {
             'nib': 'nib_dan_izin_usaha.pdf',
             'npwp_doc': 'npwp_perusahaan.pdf',
@@ -262,8 +261,6 @@ class PengajuanListNotifier extends StateNotifier<List<Pengajuan>> {
             '15 Gambar Perancangan Jaringan Air Bersih',
           ],
           tanggalSurvey: DateTime(2025, 5, 22, 9, 0),
-          catatanSurvey:
-              'Tinjau kesesuaian site plan, drainase, akses jalan, dan fasilitas umum di lokasi perumahan (Kec. Mangkubumi).',
           riwayatSurvey: [
             HasilSurveyItem(
               id: 'survey-0148',

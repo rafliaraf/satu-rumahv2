@@ -5,6 +5,7 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../../core/auth/role_session.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_role_theme.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/route_feedback.dart';
 import '../../../dashboard/presentation/providers/admin_dashboard_provider.dart';
@@ -29,6 +30,7 @@ class _ProfilAdminScreenState extends ConsumerState<ProfilAdminScreen> {
       roleLabel: 'Verifikator Administrasi',
       initials: 'RP',
       heroVariant: ProfileHeroVariant.authority,
+      customPrimaryColor: AppRoleTheme.adminPrimary,
       stats: [
         ProfileStatData('${metrics.pengajuanBaruCount}', 'Pengajuan Baru'),
         ProfileStatData(

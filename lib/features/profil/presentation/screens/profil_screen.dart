@@ -5,6 +5,7 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../../core/auth/role_session.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_role_theme.dart';
 import '../../../../core/widgets/route_feedback.dart';
 import '../../../dashboard/presentation/providers/dashboard_provider.dart';
 import '../../../pengajuan/data/models/status_tahap_pengajuan.dart';
@@ -26,7 +27,8 @@ class ProfilScreen extends ConsumerWidget {
       displayName: 'PT. Tasik Indah Sentosa',
       roleLabel: 'Developer Perumahan',
       initials: 'TI',
-      heroVariant: ProfileHeroVariant.light,
+      heroVariant: ProfileHeroVariant.authority,
+      customPrimaryColor: AppRoleTheme.developerPrimary,
       stats: [
         ProfileStatData('${pengajuan.length}', 'Total Pengajuan'),
         ProfileStatData('${pengajuan.length - selesai}', 'Dalam Proses'),

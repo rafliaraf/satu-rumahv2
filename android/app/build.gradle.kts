@@ -7,7 +7,7 @@ plugins {
 android {
     namespace = "com.saturumah.app.satu_rumah"
     compileSdk = 36
-    ndkVersion = flutter.ndkVersion
+    // ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

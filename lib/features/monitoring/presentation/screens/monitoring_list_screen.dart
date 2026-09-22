@@ -69,38 +69,26 @@ class _MonitoringListScreenState extends ConsumerState<MonitoringListScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: AppColors.background,
+        backgroundColor: AppColors.chilliDust,
         elevation: 0,
         centerTitle: true,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: InkWell(
-            onTap: () {
-              if (context.canPop()) {
-                context.pop();
-              } else {
-                context.go('/monitoring/lapangan');
-              }
-            },
-            borderRadius: AppRadii.pill,
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: AppColors.grey300),
-                color: Colors.white,
-              ),
-              child: const Icon(
-                Icons.close,
-                color: AppColors.cocoaBeanRoast,
-                size: 18,
-              ),
-            ),
+        leading: IconButton(
+          onPressed: () {
+            if (context.canPop()) {
+              context.pop();
+            } else {
+              context.go('/monitoring/lapangan');
+            }
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
           ),
         ),
         title: const Text(
           'Riwayat Monitoring',
           style: TextStyle(
-            color: AppColors.cocoaBeanRoast,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),

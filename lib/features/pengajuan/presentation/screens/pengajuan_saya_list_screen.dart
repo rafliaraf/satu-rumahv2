@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/widgets/app_header.dart';
 import '../../../../core/widgets/prototype_data_banner.dart';
 import '../../../../core/widgets/status_badge.dart';
 import '../providers/pengajuan_form_controller.dart';
@@ -54,10 +55,9 @@ class _PengajuanSayaListScreenState
 
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: const Text('Pengajuan Saya', style: AppTextStyles.headlineLarge),
-        elevation: 0,
+      appBar: const AppHeader(
+        title: 'Pengajuan Saya',
+        showNotifications: false,
       ),
       body: Column(
         children: [

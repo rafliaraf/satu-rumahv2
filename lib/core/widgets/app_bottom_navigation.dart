@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../theme/app_colors.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../auth/role_session.dart';
+import '../theme/app_role_theme.dart';
 
 class AppBottomNavigationItem {
   final IconData icon;
@@ -17,7 +18,7 @@ class AppBottomNavigationItem {
 }
 
 /// Shared navigation chrome. Destination lists remain role-specific.
-class AppBottomNavigation extends StatelessWidget {
+class AppBottomNavigation extends ConsumerWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
   final List<AppBottomNavigationItem> items;
@@ -29,7 +30,11 @@ class AppBottomNavigation extends StatelessWidget {
     required this.items,
   });
 
-  Widget _icon(AppBottomNavigationItem item, {required bool active}) {
+  Widget _icon(
+    AppBottomNavigationItem item, {
+    required bool active,
+    required Color badgeColor,
+  }) {
     final icon = Icon(
       active ? (item.activeIcon ?? item.icon) : item.icon,
       size: 24,
@@ -46,8 +51,8 @@ class AppBottomNavigation extends StatelessWidget {
           child: Container(
             constraints: const BoxConstraints(minWidth: 18, minHeight: 18),
             padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-            decoration: const BoxDecoration(
-              color: AppColors.notificationUnread,
+            decoration: BoxDecoration(
+              color: badgeColor,
               shape: BoxShape.circle,
             ),
             child: Text(
@@ -66,28 +71,44 @@ class AppBottomNavigation extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      top: false,
-      child: BottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: onTap,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: AppColors.actionPrimary,
-        unselectedItemColor: AppColors.textMuted,
-        backgroundColor: AppColors.surface,
-        elevation: 0,
-        iconSize: 24,
-        selectedFontSize: 12,
-        unselectedFontSize: 12,
-        items: [
-          for (final item in items)
-            BottomNavigationBarItem(
-              icon: _icon(item, active: false),
-              activeIcon: _icon(item, active: true),
-              label: item.label,
-            ),
-        ],
+  Widget build(BuildContext context, WidgetRef ref) {
+    final currentRole = ref.watch(roleSessionProvider).role;
+    final selectedColor = AppRoleTheme.getPrimaryColor(currentRole);
+
+    return Container(
+      decoration: const BoxDecoration(
+        color: AppRoleTheme.navBackgroundColor,
+        border: Border(
+          top: BorderSide(
+            color: Color(0xFFE2E8F0),
+            width: 1,
+          ),
+        ),
+      ),
+      child: SafeArea(
+        top: false,
+        child: BottomNavigationBar(
+          currentIndex: currentIndex,
+          onTap: onTap,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: selectedColor,
+          unselectedItemColor: AppRoleTheme.unselectedNavColor,
+          backgroundColor: AppRoleTheme.navBackgroundColor,
+          elevation: 0,
+          iconSize: 24,
+          selectedFontSize: 12,
+          unselectedFontSize: 12,
+          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
+          unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
+          items: [
+            for (final item in items)
+              BottomNavigationBarItem(
+                icon: _icon(item, active: false, badgeColor: selectedColor),
+                activeIcon: _icon(item, active: true, badgeColor: selectedColor),
+                label: item.label,
+              ),
+          ],
+        ),
       ),
     );
   }

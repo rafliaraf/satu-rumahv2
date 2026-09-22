@@ -72,29 +72,17 @@ class _LaporanPreviewScreenState extends ConsumerState<LaporanPreviewScreen> {
         backgroundColor: AppColors.background,
         elevation: 0,
         centerTitle: true,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: InkWell(
-            onTap: () {
-              if (context.canPop()) {
-                context.pop();
-              } else {
-                context.go('/monitoring/lapangan');
-              }
-            },
-            borderRadius: AppRadii.pill,
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: AppColors.grey300),
-                color: Colors.white,
-              ),
-              child: const Icon(
-                Icons.close,
-                color: AppColors.cocoaBeanRoast,
-                size: 18,
-              ),
-            ),
+        leading: IconButton(
+          onPressed: () {
+            if (context.canPop()) {
+              context.pop();
+            } else {
+              context.go('/monitoring/lapangan');
+            }
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: AppColors.cocoaBeanRoast,
           ),
         ),
         title: const Text(
@@ -128,7 +116,7 @@ class _LaporanPreviewScreenState extends ConsumerState<LaporanPreviewScreen> {
 
     return Container(
       padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: AppRadii.card,
       ),
@@ -410,7 +398,7 @@ class _LaporanPreviewScreenState extends ConsumerState<LaporanPreviewScreen> {
                 child: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.actionPrimary,
-                    shape: RoundedRectangleBorder(borderRadius: AppRadii.pill),
+                    shape: const RoundedRectangleBorder(borderRadius: AppRadii.pill),
                   ),
                   onPressed: formState.isSubmitting
                       ? null
@@ -463,7 +451,7 @@ class _LaporanPreviewScreenState extends ConsumerState<LaporanPreviewScreen> {
                 child: OutlinedButton.icon(
                   style: OutlinedButton.styleFrom(
                     side: const BorderSide(color: AppColors.grey400),
-                    shape: RoundedRectangleBorder(borderRadius: AppRadii.pill),
+                    shape: const RoundedRectangleBorder(borderRadius: AppRadii.pill),
                   ),
                   onPressed: () {
                     if (context.canPop()) {
@@ -507,7 +495,7 @@ class _LaporanPreviewScreenState extends ConsumerState<LaporanPreviewScreen> {
                 child: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.actionPrimary,
-                    shape: RoundedRectangleBorder(borderRadius: AppRadii.pill),
+                    shape: const RoundedRectangleBorder(borderRadius: AppRadii.pill),
                     elevation: 0,
                   ),
                   onPressed: () async {
@@ -552,7 +540,7 @@ class _LaporanPreviewScreenState extends ConsumerState<LaporanPreviewScreen> {
                             color: AppColors.statusSuccess,
                             width: 1.2,
                           ),
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                             borderRadius: AppRadii.pill,
                           ),
                         ),
@@ -602,7 +590,7 @@ class _LaporanPreviewScreenState extends ConsumerState<LaporanPreviewScreen> {
                             color: AppColors.grey400,
                             width: 1.2,
                           ),
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                             borderRadius: AppRadii.pill,
                           ),
                         ),
@@ -637,7 +625,7 @@ class _LaporanPreviewScreenState extends ConsumerState<LaporanPreviewScreen> {
                       color: AppColors.actionPrimary,
                       width: 1.2,
                     ),
-                    shape: RoundedRectangleBorder(borderRadius: AppRadii.pill),
+                    shape: const RoundedRectangleBorder(borderRadius: AppRadii.pill),
                   ),
                   onPressed: null,
                   icon: const Icon(

@@ -9,6 +9,7 @@ import '../../features/dashboard/presentation/screens/dashboard_screen.dart';
 import '../../features/monitoring/data/models/monitoring_model.dart';
 import '../../features/monitoring/presentation/screens/laporan_preview_screen.dart';
 import '../../features/monitoring/presentation/screens/laporan_success_screen.dart';
+import '../../features/monitoring/presentation/screens/monitoring_list_screen.dart';
 import '../../features/monitoring/presentation/screens/monitoring_main_screen.dart';
 import '../../features/monitoring/presentation/screens/tambah_monitoring_stepper_screen.dart';
 import '../../features/notifikasi/presentation/screens/notifikasi_list_screen.dart';
@@ -33,7 +34,6 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   ref.onDispose(refresh.dispose);
 
   return GoRouter(
-    // Clean startup intentionally walks Splash -> Onboarding -> Login.
     initialLocation: '/splash',
     refreshListenable: refresh,
     redirect: (context, state) {
@@ -108,8 +108,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/monitoring/lapangan/riwayat',
-        builder: (_, state) =>
-            _withNotice(state, const MonitoringMainScreen(initialIndex: 1)),
+        builder: (_, __) => const MonitoringListScreen(showBottomNav: false),
       ),
       GoRoute(
         path: '/monitoring/lapangan/profil',

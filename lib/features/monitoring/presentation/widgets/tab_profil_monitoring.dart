@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../../core/auth/role_session.dart';
+import '../../../../core/theme/app_role_theme.dart';
 import '../../../profil/presentation/widgets/role_profile_view.dart';
 import '../providers/monitoring_list_provider.dart';
 import '../../../../core/widgets/route_feedback.dart';
@@ -31,6 +32,7 @@ class TabProfilMonitoring extends ConsumerWidget {
       roleLabel: 'Tim Perwaskim Lapangan',
       initials: 'BS',
       heroVariant: ProfileHeroVariant.authority,
+      customPrimaryColor: AppRoleTheme.fieldPrimary,
       stats: [
         ProfileStatData('$thisMonth', 'Monitoring Bulan Ini'),
         ProfileStatData('${monitoring.length}', 'Total Laporan'),

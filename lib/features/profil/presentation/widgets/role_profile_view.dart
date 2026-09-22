@@ -59,6 +59,8 @@ class RoleProfileView extends StatelessWidget {
   final String logoutLabel;
   final String footerText;
   final Widget banner;
+  final Color? customPrimaryColor;
+  final Color? customAccentColor;
 
   const RoleProfileView({
     super.key,
@@ -76,6 +78,8 @@ class RoleProfileView extends StatelessWidget {
     this.onNotifications,
     this.logoutLabel = 'Keluar Akun',
     this.banner = const PrototypeDataBanner(),
+    this.customPrimaryColor,
+    this.customAccentColor,
   });
 
   bool get _isAuthority => heroVariant == ProfileHeroVariant.authority;
@@ -184,14 +188,19 @@ class RoleProfileView extends StatelessWidget {
   }
 
   Widget _buildHero(BuildContext context) {
-    final foreground = _isAuthority ? Colors.white : AppColors.textPrimary;
-    final secondary = _isAuthority
+    final heroColor = customPrimaryColor ??
+        (_isAuthority ? AppColors.brandPrimary : AppColors.surface);
+    final isCustomSolid = customPrimaryColor != null;
+    final isDark = _isAuthority || isCustomSolid;
+
+    final foreground = isDark ? Colors.white : AppColors.textPrimary;
+    final secondary = isDark
         ? Colors.white.withValues(alpha: 0.76)
         : AppColors.textMuted;
-    final heroColor = _isAuthority ? AppColors.brandPrimary : AppColors.surface;
-    final rolePillColor = _isAuthority
-        ? Colors.white.withValues(alpha: 0.18)
-        : AppColors.brandPrimary.withValues(alpha: 0.1);
+    final rolePillColor = customAccentColor ??
+        (isDark
+            ? Colors.white.withValues(alpha: 0.18)
+            : AppColors.brandPrimary.withValues(alpha: 0.1));
 
     return Container(
       width: double.infinity,
@@ -204,7 +213,7 @@ class RoleProfileView extends StatelessWidget {
       decoration: BoxDecoration(
         color: heroColor,
         borderRadius: AppRadii.hero,
-        border: _isAuthority
+        border: isDark
             ? null
             : const Border(bottom: BorderSide(color: AppColors.borderSubtle)),
       ),
@@ -235,7 +244,7 @@ class RoleProfileView extends StatelessWidget {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: _isAuthority
+                      color: isDark
                           ? Colors.white.withValues(alpha: 0.15)
                           : AppColors.surfaceWarm,
                       shape: BoxShape.circle,
