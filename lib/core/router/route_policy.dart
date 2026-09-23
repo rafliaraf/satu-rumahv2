@@ -24,10 +24,7 @@ String? roleRouteRedirect({required AppRole role, required String path}) {
 }
 
 bool _isPublicPath(String path) =>
-    path == '/login' ||
-    path == '/splash' ||
-    path == '/onboarding' ||
-    path == '/filosofi';
+    path == '/login' || path == '/splash' || path == '/onboarding';
 
 bool _isPreviewMonitoringPath(String path) => path == '/monitoring/preview';
 

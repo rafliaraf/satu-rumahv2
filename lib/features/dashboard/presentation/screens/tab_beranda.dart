@@ -244,10 +244,10 @@ class TabBeranda extends ConsumerWidget {
                       title: 'Notifikasi',
                       onTap: () => _handleShortcut(context, ref, 'Notifikasi'),
                     ),
-                    ShortcutCard(
-                      icon: Icons.auto_stories,
-                      title: 'Filosofi Sistem',
-                      onTap: () => context.push('/filosofi'),
+                    const ShortcutCard(
+                      icon: Icons.download,
+                      title: 'Format Dokumen',
+                      disabled: true,
                     ),
                     ShortcutCard(
                       icon: Icons.person_pin,
