@@ -6,6 +6,7 @@ import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
 import '../../features/dashboard/presentation/screens/admin_main_screen.dart';
 import '../../features/dashboard/presentation/screens/dashboard_screen.dart';
+import '../../features/dashboard/presentation/screens/filosofi_sistem_screen.dart';
 import '../../features/monitoring/data/models/monitoring_model.dart';
 import '../../features/monitoring/presentation/screens/laporan_preview_screen.dart';
 import '../../features/monitoring/presentation/screens/laporan_success_screen.dart';
@@ -70,6 +71,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/dashboard',
         builder: (_, state) => _withNotice(state, const DashboardScreen()),
+      ),
+      GoRoute(
+        path: '/filosofi',
+        builder: (_, __) => const FilosofiSistemScreen(),
       ),
       GoRoute(
         path: '/admin',
